@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche 911 GT3 RS</title>
+    <link rel="stylesheet" href="styless.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+</head>
+<body>
+    <header class="hero">
+        <div class="background-overlay"></div>
+        <h1 class="background-text">GT3RS</h1>
+        <a href="corvette.html" target="_blank1">
+            <img src="porche.png" alt="Porsche 911 GT3 RS" class="hero-image">
+        </a>
+        <h1 id="title">Porsche 911 GT3 RS</h1>
+        <p id="subtitle">Track Precision. Racing Heritage.</p>
+    </header>
+
+    <div class="content-wrapper">
+        <section class="facts">
+            <h2>About the GT3 RS</h2>
+            <p>The 911 GT3 RS represents the pinnacle of Porsche's naturally-aspirated road cars. Built for track performance with road legality, it embodies the pure motorsport DNA that defines Porsche's racing pedigree.</p>
+            <p>With its lightweight construction, aerodynamic precision, and track-focused engineering, the GT3 RS delivers a driving experience uncompromised by luxury considerations. The current model features a 4.0L flat-six engine mounted in the iconic rear position.</p>
+            <p>Every aspect of the GT3 RS is optimized for speed and handling, from the magnesium roof that lowers the center of gravity to the carbon fiber components that reduce weight. The extensive aerodynamic elements generate significant downforce for maximum grip through corners.</p>
+        </section>
+
+        <section class="performance">
+            <h2>Performance Stats</h2>
+            <div class="stats-container">
+                <div class="stat">
+                    <div class="stat-value">518</div>
+                    <div class="stat-label">Horsepower</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">346</div>
+                    <div class="stat-label">lb-ft Torque</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">3.0s</div>
+                    <div class="stat-label">0-60 mph</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">10.9s</div>
+                    <div class="stat-label">Quarter Mile</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">1.24G</div>
+                    <div class="stat-label">Lateral G's</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">184</div>
+                    <div class="stat-label">Top Speed (mph)</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">
+        © 2025 Porsche Enthusiast
+    </div>
+
+    <script>
+        // Hero animations
+        gsap.from("#title", { opacity: 0, y: -50, duration: 1.2, ease: "power3.out" });
+        gsap.from("#subtitle", { opacity: 0, y: 30, duration: 1.2, delay: 0.3, ease: "power3.out" });
+        gsap.from(".hero-image", { opacity: 0, scale: 1.1, duration: 1.8, ease: "power4.out" });
+        gsap.from(".background-text", { opacity: 0, scale: 1.5, duration: 2, delay: 0.2, ease: "power4.out" });
+        
+        // Content animations
+        gsap.from(".facts", { opacity: 0, x: -50, duration: 1, delay: 0.8, ease: "power3.out" });
+        gsap.from(".performance", { opacity: 0, x: 50, duration: 1, delay: 1, ease: "power3.out" });
+        gsap.from(".stat", { 
+            opacity: 0, 
+            y: 30, 
+            duration: 0.8,
+            stagger: 0.15,
+            delay: 1.2,
+            ease: "back.out(1.7)"
+        });
+        
+        // Scroll animations
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            const parallaxRate = scrollPos * 0.15;
+            document.querySelector(".background-text").style.transform = `translate(-50%, calc(-50% + ${parallaxRate}px))`;
+        });
+    </script>
+</body>
+</html>

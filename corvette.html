@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corvette C7 Z06</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+<body>
+    <header class="hero">
+        <h1 class="background-text">Z06</h1>
+        <a href="porche.html" target="_blank">
+            <img src="corvette_red.png" alt="Corvette C7 Z06" class="hero-image">
+        </a>
+        <h1 id="title">Corvette C7 Z06</h1>
+        <p id="subtitle">Supercharged Performance. Unmatched Speed.</p>
+    </header>
+
+    <div class="content-wrapper">
+        <section class="facts">
+            <h2>About the C7 Z06</h2>
+            <p>Released in 2015, the Corvette C7 Z06 was designed to be the most track-capable Corvette ever built. The aggressive aerodynamics, wider stance, and unique styling set it apart from standard Corvette models.</p>
+            <p>With a 6.2L supercharged LT4 V8, it delivers an astonishing 650 horsepower and 650 lb-ft of torque, making it one of the most powerful production cars in the world at its release.</p>
+            <p>Available in both coupe and convertible configurations, the Z06 features an available Z07 Performance Package with Brembo carbon ceramic brakes, Michelin Pilot Sport Cup 2 tires, and adjustable aerodynamic components.</p>
+        </section>
+
+        <section class="performance">
+            <h2>Performance Stats</h2>
+            <div class="stats-container">
+                <div class="stat">
+                    <div class="stat-value">650</div>
+                    <div class="stat-label">Horsepower</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">650</div>
+                    <div class="stat-label">lb-ft Torque</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">2.95s</div>
+                    <div class="stat-label">0-60 mph</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">10.95s</div>
+                    <div class="stat-label">Quarter Mile</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">1.2G</div>
+                    <div class="stat-label">Lateral G's</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">199</div>
+                    <div class="stat-label">Top Speed (mph)</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">
+        © 2025 Corvette Enthusiast
+    </div>
+
+    <script>
+        // Hero animations
+        gsap.from("#title", { opacity: 0, y: -50, duration: 1.2, ease: "power3.out" });
+        gsap.from("#subtitle", { opacity: 0, y: 30, duration: 1.2, delay: 0.3, ease: "power3.out" });
+        gsap.from(".hero-image", { opacity: 0, scale: 1.1, duration: 1.8, ease: "power4.out" });
+        gsap.from(".background-text", { opacity: 0, scale: 1.5, duration: 2, delay: 0.2, ease: "power4.out" });
+        
+        // Content animations
+        gsap.from(".facts", { opacity: 0, x: -50, duration: 1, delay: 0.8, ease: "power3.out" });
+        gsap.from(".performance", { opacity: 0, x: 50, duration: 1, delay: 1, ease: "power3.out" });
+        gsap.from(".stat", { 
+            opacity: 0, 
+            y: 30, 
+            duration: 0.8,
+            stagger: 0.15,
+            delay: 1.2,
+            ease: "back.out(1.7)"
+        });
+        
+        // Scroll animations
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            const parallaxRate = scrollPos * 0.15;
+            document.querySelector(".background-text").style.transform = `translate(-50%, calc(-50% + ${parallaxRate}px))`;
+        });
+    </script>
+</body>
+</html>
